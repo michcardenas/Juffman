@@ -402,14 +402,14 @@
             </ul>
             
             <!-- Simple and elegant language buttons -->
-            <div class="language-buttons ms-3 d-flex">                      
-        <a href="{{ route('spanish') }}" class="lang-btn {{ Request::is('es') ? 'active' : '' }}" title="Español">                              
-            ES                      
-        </a>                      
-        <a href="{{ url('/') }}" class="lang-btn {{ Request::is('/') ? 'active' : '' }}" title="English">                              
-            EN                      
-        </a>              
-    </div>
+           <div class="language-buttons ms-3 d-flex">                      
+                <a href="{{ route('spanish') }}" class="lang-btn {{ Request::is('espanol') ? 'active' : '' }}" title="Español">                              
+                    ES                      
+                </a>                      
+                <a href="{{ url('/') }}" class="lang-btn {{ Request::is('/') ? 'active' : '' }}" title="English">                              
+                    EN                      
+                </a>              
+            </div>
                 
             <a href="#contacto" class="btn btn-primary ms-3">Request Your Free Design</a>
         </div>

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'showEnglish'])->name('home');
 
-Route::get('/es', function () {
+Route::get('/espanol', function () {
     return view('welcome');
 })->name('spanish');
 
