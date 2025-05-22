@@ -3,11 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\PageController::class, 'showEnglish'])->name('home');
-
-Route::get('/espanol', function () {
+Route::get('/', function () {
     return view('welcome');
-})->name('spanish');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

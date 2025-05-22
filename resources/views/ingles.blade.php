@@ -1,11 +1,10 @@
-<!-- Header & Navigation -->
-   @extends('layouts.app_ingles')
+   @extends('layouts.app')
 
     <!-- Hero Section -->
 <section id="inicio" class="hero-carousel">
-    <!-- Simple and robust Bootstrap carousel -->
+    <!-- Carrusel de Bootstrap más simple y robusto -->
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
+        <!-- Indicadores -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
@@ -13,7 +12,7 @@
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
         </div>
         
-        <!-- Carousel slides -->
+        <!-- Slides del carrusel -->
         <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
@@ -22,9 +21,9 @@
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>We Design Your Dream Kitchen Before Installation</h1>
-                                <p class="lead mb-4">Visualize it in 3D and experience it in virtual reality.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Schedule Your Design</a>
+                                <h1>Diseñamos tu cocina soñada antes de instalarla</h1>
+                                <p class="lead mb-4">Visualízala en 3D y recórrela en realidad virtual.</p>
+                                <a href="#contacto" class="btn btn-primary btn-lg">Agenda tu diseño</a>
                             </div>
                         </div>
                     </div>
@@ -38,9 +37,9 @@
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Modern Kitchens Adapted to Your Space</h1>
-                                <p class="lead mb-4">Smart solutions and high-quality materials.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Discover More</a>
+                                <h1>Cocinas modernas adaptadas a tu espacio</h1>
+                                <p class="lead mb-4">Soluciones inteligentes y materiales de alta calidad.</p>
+                                <a href="#contacto" class="btn btn-primary btn-lg">Descubre más</a>
                             </div>
                         </div>
                     </div>
@@ -54,9 +53,9 @@
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Quality and Elegance in Every Detail</h1>
-                                <p class="lead mb-4">Designs that combine aesthetics with functionality.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">View Our Designs</a>
+                                <h1>Calidad y elegancia en cada detalle</h1>
+                                <p class="lead mb-4">Diseños que combinan estética con funcionalidad.</p>
+                                <a href="#contacto" class="btn btn-primary btn-lg">Ver nuestros diseños</a>
                             </div>
                         </div>
                     </div>
@@ -70,9 +69,9 @@
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Transform Your Home with Exclusive Designs</h1>
-                                <p class="lead mb-4">Custom kitchens that reflect your style.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Start Your Project</a>
+                                <h1>Transforma tu hogar con diseños exclusivos</h1>
+                                <p class="lead mb-4">Cocinas personalizadas que reflejan tu estilo.</p>
+                                <a href="#contacto" class="btn btn-primary btn-lg">Inicia tu proyecto</a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +79,7 @@
             </div>
         </div>
         
-        <!-- Navigation controls -->
+        <!-- Controles de navegación -->
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -90,172 +89,172 @@
     </div>
 </section>
 
-<!-- About Us Section -->
-<section id="nosotros" class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ asset('images/architect.jpg') }}" alt="About JUFMAN Kitchen Designs" class="img-fluid rounded">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="section-title">Design with purpose. Service with heart.</h2>
-                <p class="mb-4">At JUFMAN Kitchen Designs we combine technology, creativity and professional execution to transform kitchens into functional, modern and personalized spaces. We believe a kitchen should adapt to your lifestyle, not the other way around.</p>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-start">
-                            <i class="fas fa-vr-cardboard text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h5>3D Visualization + Virtual Reality</h5>
+    <!-- About Us Section -->
+    <section id="nosotros" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="{{ asset('images/architect.jpg') }}" alt="Sobre JUFMAN Kitchen Designs" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Diseño con propósito. Servicio con corazón.</h2>
+                    <p class="mb-4">En JUFMAN Kitchen Designs combinamos tecnología, creatividad y ejecución profesional para transformar cocinas en espacios funcionales, modernos y personalizados. Creemos que una cocina debe adaptarse a tu estilo de vida, no al revés.</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-vr-cardboard text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <h5>Visualización en 3D + Realidad Virtual</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-start">
-                            <i class="fas fa-tools text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h5>Supervised installation from start to finish</h5>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-tools text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <h5>Instalación supervisada de principio a fin</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-start">
-                            <i class="fas fa-handshake text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h5>Personal, direct and transparent approach</h5>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-handshake text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <h5>Trato humano, directo y transparente</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex align-items-start">
-                            <i class="fas fa-lightbulb text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
-                            <div>
-                                <h5>Real solutions, not just cabinets</h5>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-lightbulb text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                                <div>
+                                    <h5>Soluciones reales, no solo gabinetes</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Services Section -->
-<section id="servicios" class="py-5 bg-light">
+    <!-- Services Section -->
+    <section id="servicios" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-center">¿Qué hacemos por ti?</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h4>Diseño 3D de Cocinas</h4>
+                        <p>Vemos juntos tu espacio y diseñamos tu cocina ideal.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h4>Recorrido en Realidad Virtual</h4>
+                        <p>Vive la experiencia antes de comprar.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Asesoría Personalizada</h4>
+                        <p>Te guiamos paso a paso en materiales, distribución y estilo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4>Instalación Supervisada</h4>
+                        <p>Te acompañamos en todo el proceso hasta el final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portafolio" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-center">Inspiración real para tu próxima cocina</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen1.jpg') }}" alt="Diseño de Cocina 1" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen2.jpg') }}" alt="Diseño de Cocina 2" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen3.jpg') }}" alt="Diseño de Cocina 3" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen4.jpg') }}" alt="Diseño de Cocina 4" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen5.jpg') }}" alt="Diseño de Cocina 5" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('images/kitchen6.jpg') }}" alt="Diseño de Cocina 6" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+  <section id="testimonios" class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title text-center">What we do for you?</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h4>3D Kitchen Design</h4>
-                    <p>We view your space together and design your ideal kitchen.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-vr-cardboard"></i>
-                    </div>
-                    <h4>Virtual Reality Tour</h4>
-                    <p>Experience it before you buy.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>Personalized Consultation</h4>
-                    <p>We guide you step by step in materials, layout and style.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <h4>Supervised Installation</h4>
-                    <p>We accompany you throughout the entire process until the end.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Portfolio Section -->
-<section id="portafolio" class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title text-center">Real inspiration for your next kitchen</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen1.jpg') }}" alt="Kitchen Design 1" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen2.jpg') }}" alt="Kitchen Design 2" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen3.jpg') }}" alt="Kitchen Design 3" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen4.jpg') }}" alt="Kitchen Design 4" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen5.jpg') }}" alt="Kitchen Design 5" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen6.jpg') }}" alt="Kitchen Design 6" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonios" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title text-center">What our clients say</h2>
+            <h2 class="section-title text-center">Lo que dicen nuestros clientes</h2>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-1.jpg') }}" alt="Client 1" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Maria Gonzalez</h5>
+                    <img src="{{ asset('images/testimonial-1.jpg') }}" alt="Cliente 1" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>María González</h5>
                     <p class="text-muted">Minneapolis, MN</p>
-                    <p>"Seeing my kitchen in 3D before installation was incredible. The final design turned out exactly as we visualized it."</p>
+                    <p>"Ver mi cocina en 3D antes de instalarla fue increíble. El diseño final quedó exactamente como lo visualizamos."</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-2.jpg') }}" alt="Client 2" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Carlos Ramirez</h5>
+                    <img src="{{ asset('images/testimonial-2.jpg') }}" alt="Cliente 2" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>Carlos Ramírez</h5>
                     <p class="text-muted">St. Paul, MN</p>
-                    <p>"The JUFMAN team understood perfectly what we wanted and surprised us with solutions we hadn't considered."</p>
+                    <p>"El equipo de JUFMAN entendió perfectamente lo que queríamos y nos sorprendieron con soluciones que no habíamos considerado."</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-3.jpg') }}" alt="Client 3" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Ana Martinez</h5>
+                    <img src="{{ asset('images/testimonial-3.jpg') }}" alt="Cliente 3" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>Ana Martínez</h5>
                     <p class="text-muted">Bloomington, MN</p>
-                    <p>"Professional, detail-oriented, and very committed. Our kitchen turned out spectacular and functional for the whole family."</p>
+                    <p>"Profesionales, detallistas y muy comprometidos. Nuestra cocina quedó espectacular y funcional para toda la familia."</p>
                 </div>
             </div>
         </div>
@@ -263,102 +262,102 @@
 </section>
 
     <!-- Call to Action -->
-  <section class="cta-section" style="background-image: url('{{ asset('images/cta-bg.jpg') }}'); background-size: cover; background-position: center;">
-    <div class="container text-center">
-        <h2 class="display-4 mb-4">Ready to transform your kitchen?</h2>
-        <a href="#contacto" class="btn btn-light btn-lg">Request your free design</a>
-    </div>
-</section>
+    <section class="cta-section" style="background-image: url('{{ asset('images/cta-bg.jpg') }}'); background-size: cover; background-position: center;">
+        <div class="container text-center">
+            <h2 class="display-4 mb-4">¿Listo para transformar tu cocina?</h2>
+            <a href="#contacto" class="btn btn-light btn-lg">Solicita tu diseño gratuito</a>
+        </div>
+    </section>
 
-<!-- Contact Section -->
-<section id="contacto" class="py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title text-center">Contact Us</h2>
-                <p class="lead">We're ready to make your dream kitchen a reality</p>
+    <!-- Contact Section -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title text-center">Contáctanos</h2>
+                    <p class="lead">Estamos listos para hacer realidad la cocina de tus sueños</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <form class="contact-form">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Full name" required>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Teléfono" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5">
+                        <div class="mb-4">
+                            <h4>Ubicación</h4>
+                            <p>Minneapolis, MN</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4>Email</h4>
+                            <p>info@jufmankitchens.com</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4>Redes sociales</h4>
+                            <p>Instagram: @jufmankitchen</p>
+                        </div>
+                        <!-- <div>
+                            <a href="https://wa.me/1234567890" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Chatea con nosotros
+                            </a>
+                        </div> -->
                     </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="tel" class="form-control" placeholder="Phone" required>
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Send message</button>
-                </form>
-            </div>
-            <div class="col-lg-6">
-                <div class="ps-lg-5">
-                    <div class="mb-4">
-                        <h4>Location</h4>
-                        <p>Minneapolis, MN</p>
-                    </div>
-                    <div class="mb-4">
-                        <h4>Email</h4>
-                        <p>info@jufmankitchens.com</p>
-                    </div>
-                    <div class="mb-4">
-                        <h4>Social Media</h4>
-                        <p>Instagram: @jufmankitchen</p>
-                    </div>
-                    <!-- <div>
-                        <a href="https://wa.me/1234567890" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Chat with us
-                        </a>
-                    </div> -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="{{ asset('images/jufman_blanco.png') }}" alt="JUFMAN Kitchen Designs" height="160">
-                <p class="mt-3">Transforming kitchen spaces into homes with personality.</p>
-            </div>
-            <div class="col-lg-4 mb-4 mb-lg-0 text-lg-center">
-                <h5>Quick Links</h5>
-                <div class="footer-menu mt-3">
-                    <a href="#inicio">Home</a>
-                    <a href="#servicios">Services</a>
-                    <a href="#portafolio">Portfolio</a>
-                    <a href="#testimonios">Testimonials</a>
-                    <a href="#contacto">Contact</a>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="{{ asset('images/jufman_blanco.png') }}" alt="JUFMAN Kitchen Designs" height="160">
+                    <p class="mt-3">Transformando espacios de cocina en hogares con personalidad.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0 text-lg-center">
+                    <h5>Enlaces rápidos</h5>
+                    <div class="footer-menu mt-3">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#servicios">Servicios</a>
+                        <a href="#portafolio">Portafolio</a>
+                        <a href="#testimonios">Testimonios</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <h5>Síguenos</h5>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4 text-lg-end">
-                <h5>Follow Us</h5>
-                <div class="social-links mt-3">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-houzz"></i></a>
+            <div class="footer-bottom text-center">
+                <p>Copyright JUFMAN Kitchen Designs LLC © 2025</p>
+                <div>
+                    <a href="#" class="text-white-50">Política de privacidad</a> | 
+                    <a href="#" class="text-white-50">Términos y condiciones</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom text-center">
-            <p>Copyright JUFMAN Kitchen Designs LLC © 2025</p>
-            <div>
-                <a href="#" class="text-white-50">Privacy Policy</a> | 
-                <a href="#" class="text-white-50">Terms and Conditions</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
