@@ -402,14 +402,15 @@
             </ul>
             
             <!-- Botones de idioma simples y elegantes -->
-            <div class="language-buttons ms-3 d-flex">
-                <a href="{{ url('/') }}" class="lang-btn {{ Request::is('/') ? 'active' : '' }}" title="Español">
-                    EN
-                </a>
-                <a href="{{ route('jufman') }}" class="lang-btn {{ Request::is('jufman') ? 'active' : '' }}" title="English">
-                    ES
-                </a>
-            </div>
+        <div class="language-buttons ms-3 d-flex">
+    <a href="{{ route('welcome') }}" class="lang-btn {{ Request::is('welcome') ? 'active' : '' }}" title="Español">
+        ES
+    </a>
+    <a href="{{ route('jufman') }}" class="lang-btn {{ Request::is('/') || Request::is('jufman') ? 'active' : '' }}" title="English">
+        EN
+    </a>
+</div>
+
             
             <a href="#contacto" class="btn btn-primary ms-3">Solicita tu diseño gratuito</a>
         </div>

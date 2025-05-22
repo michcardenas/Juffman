@@ -4,9 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
+Route::get('/', [PageController::class, 'showEnglish'])->name('home');
+Route::get('/welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
