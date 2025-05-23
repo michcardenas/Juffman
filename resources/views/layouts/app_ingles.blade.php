@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUFMAN Kitchen Designs</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
+     </head>
     <style>
         :root {
             --primary-color: #f7a831;
@@ -371,7 +374,7 @@
     }
 }
     </style>
-</head>
+
 
 <body>
 <nav class="navbar navbar-expand-lg sticky-top">

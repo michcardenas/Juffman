@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <!-- Para dispositivos Apple -->
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <!-- Para diferentes tamaños -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png">
     
     <title>{{ config('app.name', 'JUFMAN Kitchen Designs') }}</title>
 
