@@ -90,7 +90,7 @@ class GlobalController extends Controller
             $filename = time() . "_logo." . $file->getClientOriginalExtension();
             
             // RUTA ESPECÍFICA PARA TU HOSTING - CAMBIO CRÍTICO
-            $destinationPath = base_path('public_html/storage/global/logos');
+$destinationPath = base_path('../public_html/storage/global/logos');
             \Log::info('🎯 Destination path: ' . $destinationPath);
             
             // Verificar/crear directorio
