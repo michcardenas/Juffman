@@ -25,6 +25,10 @@ class GlobalController extends Controller
  public function update(Request $request)
 {
     try {
+        // Debug inicial
+        \Log::info('🚀 INICIO - GlobalController update');
+        \Log::info('📄 Request data:', $request->all());
+        
         // Limpiar sesión para evitar problemas
         session()->forget('_old_input');
 
@@ -34,7 +38,7 @@ class GlobalController extends Controller
         // Preparar datos
         $data = [];
         
-        // Procesar campos de texto
+        // Procesar campos de texto (sin cambios)
         if ($request->has('site_name')) {
             $data['site_name'] = $request->input('site_name');
         }
@@ -72,109 +76,106 @@ class GlobalController extends Controller
             $data['google_analytics'] = $request->input('google_analytics');
         }
 
-        // Procesar Logo - MÉTODO ESPECÍFICO PARA TU HOSTING
+        // LOGO - VERSIÓN ESPECÍFICA PARA TU HOSTING
         if ($request->hasFile('logo')) {
-            \Log::info('🔍 Procesando logo upload...');
-            
-            // Eliminar logo anterior si existe
-            if ($global->logo) {
-                $oldLogoPath = base_path('public_html/storage/' . $global->logo);
-                if (file_exists($oldLogoPath)) {
-                    unlink($oldLogoPath);
-                    \Log::info('✅ Logo anterior eliminado: ' . $oldLogoPath);
-                }
-            }
+            \Log::info('📁 Logo file detected');
             
             $file = $request->file('logo');
+            \Log::info('📄 File info:', [
+                'name' => $file->getClientOriginalName(),
+                'size' => $file->getSize(),
+                'type' => $file->getMimeType()
+            ]);
+            
             $filename = time() . "_logo." . $file->getClientOriginalExtension();
             
-            // IMPORTANTE: Usar base_path con public_html para tu hosting
+            // RUTA ESPECÍFICA PARA TU HOSTING - CAMBIO CRÍTICO
             $destinationPath = base_path('public_html/storage/global/logos');
+            \Log::info('🎯 Destination path: ' . $destinationPath);
             
-            // Crear directorio si no existe
-            if (!file_exists($destinationPath)) {
+            // Verificar/crear directorio
+            if (!is_dir($destinationPath)) {
+                \Log::info('📁 Creating directory...');
                 mkdir($destinationPath, 0755, true);
-                \Log::info('📁 Directorio creado: ' . $destinationPath);
+            }
+            
+            // Eliminar archivo anterior
+            if ($global->logo) {
+                $oldFile = base_path('public_html/storage/' . $global->logo);
+                if (file_exists($oldFile)) {
+                    unlink($oldFile);
+                    \Log::info('🗑️ Old logo deleted: ' . $oldFile);
+                }
             }
             
             // Mover archivo
+            \Log::info('📤 Moving file to: ' . $destinationPath . '/' . $filename);
+            
             if ($file->move($destinationPath, $filename)) {
                 $data['logo'] = 'global/logos/' . $filename;
                 
-                // Dar permisos correctos
-                chmod($destinationPath . '/' . $filename, 0644);
+                // Dar permisos
+                $fullPath = $destinationPath . '/' . $filename;
+                chmod($fullPath, 0644);
                 
-                \Log::info('✅ Logo guardado exitosamente en: ' . $destinationPath . '/' . $filename);
-                \Log::info('📝 Valor para BD: ' . $data['logo']);
+                \Log::info('✅ SUCCESS - Logo saved: ' . $fullPath);
+                \Log::info('📝 DB value: ' . $data['logo']);
             } else {
-                \Log::error('❌ Error al mover archivo de logo');
-                throw new \Exception('Error al mover archivo de logo');
+                \Log::error('❌ FAILED to move logo file');
+                throw new \Exception('Error moving logo file');
             }
         }
 
-        // Procesar Favicon - MÉTODO ESPECÍFICO PARA TU HOSTING
+        // FAVICON - MISMA LÓGICA
         if ($request->hasFile('favicon')) {
-            \Log::info('🔍 Procesando favicon upload...');
-            
-            // Eliminar favicon anterior si existe
-            if ($global->favicon) {
-                $oldFaviconPath = base_path('public_html/storage/' . $global->favicon);
-                if (file_exists($oldFaviconPath)) {
-                    unlink($oldFaviconPath);
-                    \Log::info('✅ Favicon anterior eliminado: ' . $oldFaviconPath);
-                }
-            }
+            \Log::info('🖼️ Favicon file detected');
             
             $file = $request->file('favicon');
             $filename = time() . "_favicon." . $file->getClientOriginalExtension();
             
-            // IMPORTANTE: Usar base_path con public_html para tu hosting
             $destinationPath = base_path('public_html/storage/global/favicons');
             
-            // Crear directorio si no existe
-            if (!file_exists($destinationPath)) {
+            if (!is_dir($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
-                \Log::info('📁 Directorio creado: ' . $destinationPath);
             }
             
-            // Mover archivo
+            if ($global->favicon) {
+                $oldFile = base_path('public_html/storage/' . $global->favicon);
+                if (file_exists($oldFile)) {
+                    unlink($oldFile);
+                }
+            }
+            
             if ($file->move($destinationPath, $filename)) {
                 $data['favicon'] = 'global/favicons/' . $filename;
-                
-                // Dar permisos correctos
                 chmod($destinationPath . '/' . $filename, 0644);
-                
-                \Log::info('✅ Favicon guardado exitosamente en: ' . $destinationPath . '/' . $filename);
-                \Log::info('📝 Valor para BD: ' . $data['favicon']);
+                \Log::info('✅ Favicon saved: ' . $destinationPath . '/' . $filename);
             } else {
-                \Log::error('❌ Error al mover archivo de favicon');
-                throw new \Exception('Error al mover archivo de favicon');
+                \Log::error('❌ FAILED to move favicon file');
+                throw new \Exception('Error moving favicon file');
             }
         }
 
-        // Debug: Ver qué datos se van a guardar
-        \Log::info('📊 Datos a guardar en global_settings:', $data);
-
-        // Agregar timestamp
+        // Guardar en base de datos
+        \Log::info('💾 Data to save:', $data);
+        
         $data['updated_at'] = now();
 
-        // Guardar en base de datos
         if ($global->exists) {
             $global->update($data);
+            \Log::info('✅ Database updated for ID: ' . $global->id);
             $message = 'Configuración global actualizada exitosamente.';
-            \Log::info('✅ Configuración actualizada para ID: ' . $global->id);
         } else {
             $data['created_at'] = now();
             $newGlobal = GlobalSetting::create($data);
+            \Log::info('✅ New record created with ID: ' . $newGlobal->id);
             $message = 'Configuración global creada exitosamente.';
-            \Log::info('✅ Nueva configuración creada con ID: ' . $newGlobal->id);
         }
 
-        // Redireccionar al método index para mostrar los datos actualizados
         return redirect()->route('global.index')->with('success', $message);
 
     } catch (\Exception $e) {
-        \Log::error('❌ Error en GlobalController@update: ' . $e->getMessage());
+        \Log::error('❌ EXCEPTION in GlobalController@update: ' . $e->getMessage());
         \Log::error('📍 Stack trace: ' . $e->getTraceAsString());
         return redirect()->back()->with('error', 'Error al guardar: ' . $e->getMessage());
     }
