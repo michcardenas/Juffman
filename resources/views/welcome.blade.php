@@ -324,41 +324,6 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{ asset('images/jufman_blanco.png') }}" alt="JUFMAN Kitchen Designs" height="160">
-                    <p class="mt-3">Transformando espacios de cocina en hogares con personalidad.</p>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0 text-lg-center">
-                    <h5>Enlaces rápidos</h5>
-                    <div class="footer-menu mt-3">
-                        <a href="#inicio">Inicio</a>
-                        <a href="#servicios">Servicios</a>
-                        <a href="#portafolio">Portafolio</a>
-                        <a href="#testimonios">Testimonios</a>
-                        <a href="#contacto">Contacto</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <h5>Síguenos</h5>
-                    <div class="social-links mt-3">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-houzz"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom text-center">
-                <p>Copyright JUFMAN Kitchen Designs LLC © 2025</p>
-                <div>
-                    <a href="#" class="text-white-50">Política de privacidad</a> | 
-                    <a href="#" class="text-white-50">Términos y condiciones</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 
 @endsection

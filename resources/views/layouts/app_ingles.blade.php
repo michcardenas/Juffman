@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUFMAN Kitchen Designs</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
+
+     @if($global && $global->favicon)
+        <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $global->favicon) }}">
+    @endif
+    
+    <!-- Meta Tags SEO -->
+    <title>{{ $global && $global->meta_title ? $global->meta_title : 'Kitchen Design Company' }}</title>
+    <meta name="description" content="{{ $global && $global->meta_description ? $global->meta_description : 'Professional kitchen design services' }}">
+    <meta name="keywords" content="{{ $global && $global->meta_keywords ? $global->meta_keywords : 'kitchen, design, cabinets' }}">
+    <meta name="author" content="{{ $global && $global->meta_author ? $global->meta_author : 'Your Company' }}">
+    <meta name="robots" content="{{ $global && $global->meta_robots ? $global->meta_robots : 'index,follow' }}">
+    
+    @if($global && $global->canonical_url)
+        <link rel="canonical" href="{{ $global->canonical_url }}">
+    @endif
+
+
+    <!-- <title>JUFMAN Kitchen Designs</title> -->
+    <!-- <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}"> -->
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -423,7 +440,42 @@
     <main>
         @yield('content')
     </main>
-
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="{{ asset('images/jufman_blanco.png') }}" alt="JUFMAN Kitchen Designs" height="160">
+                <p class="mt-3">Transforming kitchen spaces into homes with personality.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0 text-lg-center">
+                <h5>Quick Links</h5>
+                <div class="footer-menu mt-3">
+                    <a href="#inicio">Home</a>
+                    <a href="#servicios">Services</a>
+                    <a href="#portafolio">Portfolio</a>
+                    <a href="#testimonios">Testimonials</a>
+                    <a href="#contacto">Contact</a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <h5>Follow Us</h5>
+                <div class="social-links mt-3">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-houzz"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>Copyright JUFMAN Kitchen Designs LLC © 2025</p>
+            <div>
+                <a href="#" class="text-white-50">Privacy Policy</a> | 
+                <a href="#" class="text-white-50">Terms and Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

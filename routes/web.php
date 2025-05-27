@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaginaController;
+use App\Http\Controllers\GlobalController;
+
 
 Route::get('/', [PageController::class, 'showEnglish'])->name('home');
 Route::get('/welcome', function () {
@@ -26,6 +29,17 @@ Route::get('locale/{locale}', function ($locale) {
     session()->put('locale', $locale);
     return redirect()->back();
 })->name('locale');
+
+
+Route::prefix('admin/paginas')->middleware(['auth'])->group(function () {
+    Route::get('/en', [PaginaController::class, 'editarEn'])->name('paginas.editar.en');
+    Route::get('/es', [PaginaController::class, 'editarglobal'])->name('paginas.editar.es');
+    Route::post('/en', [PaginaController::class, 'updateEn'])->name('contenido-ingles.update');
+
+
+});
+Route::get('/admin/global', [GlobalController::class, 'index'])->name('global.index');
+Route::post('/admin/global/update', [GlobalController::class, 'update'])->name('global.update');
 
 
 Route::get('/jufman', [PageController::class, 'showEnglish'])->name('jufman');

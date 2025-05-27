@@ -18,14 +18,14 @@
         <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
-                <div class="hero-slide" style="background-image: url('{{ asset('images/kitchen1.jpg') }}');">
+                <div class="hero-slide" style="background-image: url('{{ $contenido->img_hero_carrusel_1 ? asset('storage/' . $contenido->img_hero_carrusel_1) : asset('images/kitchen1.jpg') }}');">
                     <div class="hero-overlay"></div>
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>We Design Your Dream Kitchen Before Installation</h1>
-                                <p class="lead mb-4">Visualize it in 3D and experience it in virtual reality.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Schedule Your Design</a>
+                                <h1>{{ $contenido->h1_hero_carrusel_1 ?: 'We Design Your Dream Kitchen Before Installation' }}</h1>
+                                <p class="lead mb-4">{{ $contenido->p_hero_carrusel_1 ?: 'Visualize it in 3D and experience it in virtual reality.' }}</p>
+                                <a href="{{ $contenido->a_hero_carrusel_1 ?: '#contacto' }}" class="btn btn-primary btn-lg">Schedule Your Design</a>
                             </div>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
             
             <!-- Slide 2 -->
             <div class="carousel-item">
-                <div class="hero-slide" style="background-image: url('{{ asset('images/kitchen2.jpg') }}');">
+                <div class="hero-slide" style="background-image: url('{{ $contenido->img_hero_carrusel_2 ? asset('storage/' . $contenido->img_hero_carrusel_2) : asset('images/kitchen2.jpg') }}');">
                     <div class="hero-overlay"></div>
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Modern Kitchens Adapted to Your Space</h1>
-                                <p class="lead mb-4">Smart solutions and high-quality materials.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Discover More</a>
+                                <h1>{{ $contenido->h1_hero_carrusel_2 ?: 'Modern Kitchens Adapted to Your Space' }}</h1>
+                                <p class="lead mb-4">{{ $contenido->p_hero_carrusel_2 ?: 'Smart solutions and high-quality materials.' }}</p>
+                                <a href="{{ $contenido->a_hero_carrusel_2 ?: '#contacto' }}" class="btn btn-primary btn-lg">Discover More</a>
                             </div>
                         </div>
                     </div>
@@ -50,14 +50,14 @@
             
             <!-- Slide 3 -->
             <div class="carousel-item">
-                <div class="hero-slide" style="background-image: url('{{ asset('images/kitchen3.jpg') }}');">
+                <div class="hero-slide" style="background-image: url('{{ $contenido->img_hero_carrusel_3 ? asset('storage/' . $contenido->img_hero_carrusel_3) : asset('images/kitchen3.jpg') }}');">
                     <div class="hero-overlay"></div>
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Quality and Elegance in Every Detail</h1>
-                                <p class="lead mb-4">Designs that combine aesthetics with functionality.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">View Our Designs</a>
+                                <h1>{{ $contenido->h1_hero_carrusel_3 ?: 'Quality and Elegance in Every Detail' }}</h1>
+                                <p class="lead mb-4">{{ $contenido->p_hero_carrusel_3 ?: 'Designs that combine aesthetics with functionality.' }}</p>
+                                <a href="{{ $contenido->a_hero_carrusel_3 ?: '#contacto' }}" class="btn btn-primary btn-lg">View Our Designs</a>
                             </div>
                         </div>
                     </div>
@@ -66,14 +66,14 @@
             
             <!-- Slide 4 -->
             <div class="carousel-item">
-                <div class="hero-slide" style="background-image: url('{{ asset('images/kitchen4.jpg') }}');">
+                <div class="hero-slide" style="background-image: url('{{ $contenido->img_hero_carrusel_4 ? asset('storage/' . $contenido->img_hero_carrusel_4) : asset('images/kitchen4.jpg') }}');">
                     <div class="hero-overlay"></div>
                     <div class="hero-content container">
                         <div class="row">
                             <div class="col-lg-8 ps-lg-5">
-                                <h1>Transform Your Home with Exclusive Designs</h1>
-                                <p class="lead mb-4">Custom kitchens that reflect your style.</p>
-                                <a href="#contacto" class="btn btn-primary btn-lg">Start Your Project</a>
+                                <h1>{{ $contenido->h1_hero_carrusel_4 ?: 'Transform Your Home with Exclusive Designs' }}</h1>
+                                <p class="lead mb-4">{{ $contenido->p_hero_carrusel_4 ?: 'Custom kitchens that reflect your style.' }}</p>
+                                <a href="{{ $contenido->a_hero_carrusel_4 ?: '#contacto' }}" class="btn btn-primary btn-lg">Start Your Project</a>
                             </div>
                         </div>
                     </div>
@@ -96,41 +96,51 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ asset('images/architect.jpg') }}" alt="About JUFMAN Kitchen Designs" class="img-fluid rounded">
+                <img src="{{ $contenido->img_about_us ? asset('storage/' . $contenido->img_about_us) : asset('images/architect.jpg') }}" 
+                     alt="About JUFMAN Kitchen Designs" 
+                     class="img-fluid rounded">
             </div>
             <div class="col-lg-6">
-                <h2 class="section-title">Design with purpose. Service with heart.</h2>
-                <p class="mb-4">At JUFMAN Kitchen Designs we combine technology, creativity and professional execution to transform kitchens into functional, modern and personalized spaces. We believe a kitchen should adapt to your lifestyle, not the other way around.</p>
+                <h2 class="section-title">{{ $contenido->h2_about_us ?: 'Design with purpose. Service with heart.' }}</h2>
+                <p class="mb-4">{{ $contenido->p_about_us ?: 'At JUFMAN Kitchen Designs we combine technology, creativity and professional execution to transform kitchens into functional, modern and personalized spaces. We believe a kitchen should adapt to your lifestyle, not the other way around.' }}</p>
+                
                 <div class="row">
+                    <!-- Característica 1 -->
                     <div class="col-md-6 mb-3">
                         <div class="d-flex align-items-start">
-                            <i class="fas fa-vr-cardboard text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <i class="{{ $contenido->i__about_us_1 ?: 'fas fa-vr-cardboard' }} text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5>3D Visualization + Virtual Reality</h5>
+                                <h5>{{ $contenido->h5__about_us_1 ?: '3D Visualization + Virtual Reality' }}</h5>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Característica 2 -->
                     <div class="col-md-6 mb-3">
                         <div class="d-flex align-items-start">
-                            <i class="fas fa-tools text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <i class="{{ $contenido->i__about_us_2 ?: 'fas fa-tools' }} text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5>Supervised installation from start to finish</h5>
+                                <h5>{{ $contenido->h5__about_us_2 ?: 'Supervised installation from start to finish' }}</h5>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Característica 3 -->
                     <div class="col-md-6 mb-3">
                         <div class="d-flex align-items-start">
-                            <i class="fas fa-handshake text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <i class="{{ $contenido->i__about_us_3 ?: 'fas fa-handshake' }} text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5>Personal, direct and transparent approach</h5>
+                                <h5>{{ $contenido->h5__about_us_3 ?: 'Personal, direct and transparent approach' }}</h5>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Característica 4 -->
                     <div class="col-md-6 mb-3">
                         <div class="d-flex align-items-start">
-                            <i class="fas fa-lightbulb text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                            <i class="{{ $contenido->i__about_us_4 ?: 'fas fa-lightbulb' }} text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5>Real solutions, not just cabinets</h5>
+                                <h5>{{ $contenido->h5__about_us_4 ?: 'Real solutions, not just cabinets' }}</h5>
                             </div>
                         </div>
                     </div>
@@ -144,43 +154,50 @@
 <section id="servicios" class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title text-center">What we do for you?</h2>
+            <h2 class="section-title text-center">{{ $contenido->h2_services ?: 'What we do for you?' }}</h2>
         </div>
         <div class="row">
+            <!-- Servicio 1 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
+                        <i class="{{ $contenido->i_services_1 ?: 'fas fa-drafting-compass' }}"></i>
                     </div>
-                    <h4>3D Kitchen Design</h4>
-                    <p>We view your space together and design your ideal kitchen.</p>
+                    <h4>{{ $contenido->h4__services_1 ?: '3D Kitchen Design' }}</h4>
+                    <p>{{ $contenido->p__services_1 ?: 'We view your space together and design your ideal kitchen.' }}</p>
                 </div>
             </div>
+            
+            <!-- Servicio 2 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-vr-cardboard"></i>
+                        <i class="{{ $contenido->i_services_2 ?: 'fas fa-vr-cardboard' }}"></i>
                     </div>
-                    <h4>Virtual Reality Tour</h4>
-                    <p>Experience it before you buy.</p>
+                    <h4>{{ $contenido->h4__services_2 ?: 'Virtual Reality Tour' }}</h4>
+                    <p>{{ $contenido->p__services_2 ?: 'Experience it before you buy.' }}</p>
                 </div>
             </div>
+            
+            <!-- Servicio 3 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="{{ $contenido->i_services_3 ?: 'fas fa-comments' }}"></i>
                     </div>
-                    <h4>Personalized Consultation</h4>
-                    <p>We guide you step by step in materials, layout and style.</p>
+                    <h4>{{ $contenido->h4__services_3 ?: 'Personalized Consultation' }}</h4>
+                    <p>{{ $contenido->p__services_3 ?: 'We guide you step by step in materials, layout and style.' }}</p>
                 </div>
             </div>
+            
+            <!-- Servicio 4 -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-hammer"></i>
+                        <i class="{{ $contenido->i_services_4 ?: 'fas fa-hammer' }}"></i>
                     </div>
-                    <h4>Supervised Installation</h4>
-                    <p>We accompany you throughout the entire process until the end.</p>
+                    <h4>{{ $contenido->h4__services_4 ?: 'Supervised Installation' }}</h4>
+                    <p>{{ $contenido->p__services_4 ?: 'We accompany you throughout the entire process until the end.' }}</p>
                 </div>
             </div>
         </div>
@@ -191,72 +208,110 @@
 <section id="portafolio" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title text-center">Real inspiration for your next kitchen</h2>
+            <h2 class="section-title text-center">{{ $contenido->h2_portfolio ?: 'Real inspiration for your next kitchen' }}</h2>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen1.jpg') }}" alt="Kitchen Design 1" class="img-fluid">
+            @for ($i = 1; $i <= 6; $i++)
+                @php
+                    // Obtener imagen desde BD o usar imagen por defecto
+                    $imagen = $contenido->{'img_portfolio_' . $i} ?? '';
+                    $imagenUrl = $imagen ? asset('storage/' . $imagen) : asset('images/kitchen' . $i . '.jpg');
+                    
+                    // Generar alt text dinámico
+                    $altText = "Kitchen Design $i";
+                @endphp
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item position-relative overflow-hidden">
+                        <img src="{{ $imagenUrl }}" 
+                             alt="{{ $altText }}" 
+                             class="img-fluid w-100"
+                             loading="lazy"
+                             style="height: 300px; object-fit: cover; transition: transform 0.3s ease;">
+                        
+                        <!-- Overlay con efecto hover -->
+                        <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 
+                                    d-flex align-items-center justify-content-center
+                                    bg-dark bg-opacity-50 opacity-0"
+                             style="transition: opacity 0.3s ease;">
+                            <div class="text-center text-white">
+                                <i class="fas fa-search-plus fa-2x mb-2"></i>
+                                <p class="mb-0">{{ $altText }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen2.jpg') }}" alt="Kitchen Design 2" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen3.jpg') }}" alt="Kitchen Design 3" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen4.jpg') }}" alt="Kitchen Design 4" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen5.jpg') }}" alt="Kitchen Design 5" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item">
-                    <img src="{{ asset('images/kitchen6.jpg') }}" alt="Kitchen Design 6" class="img-fluid">
-                </div>
-            </div>
+            @endfor
         </div>
     </div>
+    
+    <!-- CSS para efectos hover -->
+    <style>
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1 !important;
+        }
+        
+        .portfolio-item {
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+    </style>
 </section>
 
 <!-- Testimonials Section -->
 <section id="testimonios" class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title text-center">What our clients say</h2>
+            <h2 class="section-title text-center">{{ $contenido->h2_testimonials ?: 'What our clients say' }}</h2>
         </div>
         <div class="row">
+            <!-- Testimonio 1 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-1.jpg') }}" alt="Client 1" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Maria Gonzalez</h5>
-                    <p class="text-muted">Minneapolis, MN</p>
-                    <p>"Seeing my kitchen in 3D before installation was incredible. The final design turned out exactly as we visualized it."</p>
+                    <img src="{{ $contenido->img_testimonials_1 ? asset('storage/' . $contenido->img_testimonials_1) : asset('images/testimonial-1.jpg') }}" 
+                         alt="Client 1" 
+                         class="testimonial-avatar" 
+                         onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>{{ $contenido->h5_testimonials_1 ?: 'Maria Gonzalez' }}</h5>
+                    <p class="text-muted">{{ $contenido->p_testimonials_city_1 ?: 'Minneapolis, MN' }}</p>
+                    <p>"{{ $contenido->p_testimonials_1 ?: 'Seeing my kitchen in 3D before installation was incredible. The final design turned out exactly as we visualized it.' }}"</p>
                 </div>
             </div>
+            
+            <!-- Testimonio 2 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-2.jpg') }}" alt="Client 2" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Carlos Ramirez</h5>
-                    <p class="text-muted">St. Paul, MN</p>
-                    <p>"The JUFMAN team understood perfectly what we wanted and surprised us with solutions we hadn't considered."</p>
+                    <img src="{{ $contenido->img_testimonials_2 ? asset('storage/' . $contenido->img_testimonials_2) : asset('images/testimonial-2.jpg') }}" 
+                         alt="Client 2" 
+                         class="testimonial-avatar" 
+                         onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>{{ $contenido->h5_testimonials_2 ?: 'Carlos Ramirez' }}</h5>
+                    <p class="text-muted">{{ $contenido->p_testimonials_city_2 ?: 'St. Paul, MN' }}</p>
+                    <p>"{{ $contenido->p_testimonials_2 ?: 'The JUFMAN team understood perfectly what we wanted and surprised us with solutions we hadn\'t considered.' }}"</p>
                 </div>
             </div>
+            
+            <!-- Testimonio 3 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="testimonial-card">
-                    <img src="{{ asset('images/testimonial-3.jpg') }}" alt="Client 3" class="testimonial-avatar" onerror="this.src='{{ asset('images/user.png') }}'">
-                    <h5>Ana Martinez</h5>
-                    <p class="text-muted">Bloomington, MN</p>
-                    <p>"Professional, detail-oriented, and very committed. Our kitchen turned out spectacular and functional for the whole family."</p>
+                    <img src="{{ $contenido->img_testimonials_3 ? asset('storage/' . $contenido->img_testimonials_3) : asset('images/testimonial-3.jpg') }}" 
+                         alt="Client 3" 
+                         class="testimonial-avatar" 
+                         onerror="this.src='{{ asset('images/user.png') }}'">
+                    <h5>{{ $contenido->h5_testimonials_3 ?: 'Ana Martinez' }}</h5>
+                    <p class="text-muted">{{ $contenido->p_testimonials_city_3 ?: 'Bloomington, MN' }}</p>
+                    <p>"{{ $contenido->p_testimonials_3 ?: 'Professional, detail-oriented, and very committed. Our kitchen turned out spectacular and functional for the whole family.' }}"</p>
                 </div>
             </div>
         </div>
@@ -264,10 +319,10 @@
 </section>
 
     <!-- Call to Action -->
-  <section class="cta-section" style="background-image: url('{{ asset('images/cta-bg.jpg') }}'); background-size: cover; background-position: center;">
+<section class="cta-section" style="background-image: url('{{ asset('images/cta-bg.jpg') }}'); background-size: cover; background-position: center;">
     <div class="container text-center">
-        <h2 class="display-4 mb-4">Ready to transform your kitchen?</h2>
-        <a href="#contacto" class="btn btn-light btn-lg">Request your free design</a>
+        <h2 class="display-4 mb-4">{{ $contenido->h2_call ?: 'Ready to transform your kitchen?' }}</h2>
+        <a href="#contacto" class="btn btn-light btn-lg">{{ $contenido->btn_call ?: 'Request your free design' }}</a>
     </div>
 </section>
 
@@ -276,8 +331,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title text-center">Contact Us</h2>
-                <p class="lead">We're ready to make your dream kitchen a reality</p>
+                <h2 class="section-title text-center">{{ $contenido->h2_contact_title ?: 'Contact Us' }}</h2>
+                <p class="lead">{{ $contenido->p_contact_title ?: 'We\'re ready to make your dream kitchen a reality' }}</p>
             </div>
         </div>
         <div class="row">
@@ -301,22 +356,13 @@
             <div class="col-lg-6">
                 <div class="ps-lg-5">
                     <div class="mb-4">
-                        <h4>Location</h4>
-                        <p>Minneapolis, MN</p>
+                        <h4>{{ $contenido->h4_contact_1 ?: 'Location' }}</h4>
+                        <p>{{ $contenido->p_contact_1 ?: 'Minneapolis, MN' }}</p>
                     </div>
                     <div class="mb-4">
-                        <h4>Email</h4>
-                        <p>info@jufmankitchens.com</p>
+                        <h4>{{ $contenido->h4_contact_email_1 ?: 'Email' }}</h4>
+                        <p>{{ $contenido->p_contact_email_1 ?: 'info@jufmankitchens.com' }}</p>
                     </div>
-                    <div class="mb-4">
-                        <h4>Social Media</h4>
-                        <p>Instagram: @jufmankitchen</p>
-                    </div>
-                    <!-- <div>
-                        <a href="https://wa.me/1234567890" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Chat with us
-                        </a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -324,41 +370,6 @@
 </section>
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="{{ asset('images/jufman_blanco.png') }}" alt="JUFMAN Kitchen Designs" height="160">
-                <p class="mt-3">Transforming kitchen spaces into homes with personality.</p>
-            </div>
-            <div class="col-lg-4 mb-4 mb-lg-0 text-lg-center">
-                <h5>Quick Links</h5>
-                <div class="footer-menu mt-3">
-                    <a href="#inicio">Home</a>
-                    <a href="#servicios">Services</a>
-                    <a href="#portafolio">Portfolio</a>
-                    <a href="#testimonios">Testimonials</a>
-                    <a href="#contacto">Contact</a>
-                </div>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <h5>Follow Us</h5>
-                <div class="social-links mt-3">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-houzz"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>Copyright JUFMAN Kitchen Designs LLC © 2025</p>
-            <div>
-                <a href="#" class="text-white-50">Privacy Policy</a> | 
-                <a href="#" class="text-white-50">Terms and Conditions</a>
-            </div>
-        </div>
-    </div>
-</footer>
+
 
 @endsection
