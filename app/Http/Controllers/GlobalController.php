@@ -133,14 +133,14 @@ $destinationPath = base_path('../public_html/storage/global/logos');
             $file = $request->file('favicon');
             $filename = time() . "_favicon." . $file->getClientOriginalExtension();
             
-            $destinationPath = base_path('public_html/storage/global/favicons');
+            $destinationPath = base_path('../public_html/storage/global/favicons');
             
             if (!is_dir($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
             
             if ($global->favicon) {
-                $oldFile = base_path('public_html/storage/' . $global->favicon);
+                $oldFile = base_path('../public_html/storage/' . $global->favicon);
                 if (file_exists($oldFile)) {
                     unlink($oldFile);
                 }
