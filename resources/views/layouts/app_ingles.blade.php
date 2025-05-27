@@ -459,12 +459,18 @@
             </div>
             <div class="col-lg-4 text-lg-end">
                 <h5>Follow Us</h5>
-                <div class="social-links mt-3">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                    <a href="#"><i class="fab fa-houzz"></i></a>
-                </div>
+              <div class="social-links mt-3">
+                @if(!empty($global->link_facebook))
+                    <a href="{{ $global->link_facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>
+                @endif
+                @if(!empty($global->link_instagram))
+                    <a href="{{ $global->link_instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                @endif
+                @if(!empty($global->link_pinterest))
+                    <a href="{{ $global->link_pinterest }}" target="_blank"><i class="fab fa-pinterest"></i></a>
+                @endif
+                {{-- Puedes agregar Houzz u otras redes aquí si en un futuro las agregas en la tabla --}}
+            </div>
             </div>
         </div>
         <div class="footer-bottom text-center">
