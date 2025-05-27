@@ -16,7 +16,7 @@ class GlobalController extends Controller
         $global = GlobalSetting::getSettings();
         
         // Cambiar a tu vista real - ajusta el nombre según tu estructura
-        return view('admin.editar-es', compact('global'));
+        return view('admin.paginas.editar-es', compact('global'));
     }
 
     /**
