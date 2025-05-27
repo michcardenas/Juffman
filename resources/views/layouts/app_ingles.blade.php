@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   @if($global && $global->favicon)
-    <link rel="icon" type="image/x-icon" href="{{ url('storage/' . $global->favicon) }}">
-@endif
-
+     @if($global && $global->favicon)
+        <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $global->favicon) }}">
+    @endif
     
     <!-- Meta Tags SEO -->
     <title>{{ $global && $global->meta_title ? $global->meta_title : 'Kitchen Design Company' }}</title>

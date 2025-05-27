@@ -101,7 +101,7 @@ $destinationPath = base_path('../public_html/storage/global/logos');
             
             // Eliminar archivo anterior
             if ($global->logo) {
-                $oldFile = base_path('public_html/storage/' . $global->logo);
+                $oldFile = base_path('../public_html/storage/global/logos' . $global->logo);
                 if (file_exists($oldFile)) {
                     unlink($oldFile);
                     \Log::info('🗑️ Old logo deleted: ' . $oldFile);
