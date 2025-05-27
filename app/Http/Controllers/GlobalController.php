@@ -22,7 +22,7 @@ class GlobalController extends Controller
     /**
      * Actualizar la configuración global
      */
-    public function update(Request $request)
+ public function update(Request $request)
     {
         try {
             // Limpiar sesión para evitar problemas
@@ -72,30 +72,50 @@ class GlobalController extends Controller
                 $data['google_analytics'] = $request->input('google_analytics');
             }
 
-            // Procesar Logo
+            // Procesar Logo - MÉTODO CORREGIDO PARA HOSTING SIN SYMLINK
             if ($request->hasFile('logo')) {
                 // Eliminar logo anterior si existe
-                if ($global->logo && Storage::disk('public')->exists($global->logo)) {
-                    Storage::disk('public')->delete($global->logo);
+                if ($global->logo && file_exists(public_path('storage/' . $global->logo))) {
+                    unlink(public_path('storage/' . $global->logo));
                 }
                 
                 $file = $request->file('logo');
                 $filename = time() . "_logo." . $file->getClientOriginalExtension();
-                $path = $file->storeAs('global/logos', $filename, 'public');
-                $data['logo'] = $path;
+                
+                // Crear directorio si no existe
+                $destinationPath = public_path('storage/global/logos');
+                if (!file_exists($destinationPath)) {
+                    mkdir($destinationPath, 0755, true);
+                }
+                
+                // Mover archivo directamente a public/storage/
+                $file->move($destinationPath, $filename);
+                $data['logo'] = 'global/logos/' . $filename;
+                
+                \Log::info('Logo guardado en: ' . $destinationPath . '/' . $filename);
             }
 
-            // Procesar Favicon
+            // Procesar Favicon - MÉTODO CORREGIDO PARA HOSTING SIN SYMLINK
             if ($request->hasFile('favicon')) {
                 // Eliminar favicon anterior si existe
-                if ($global->favicon && Storage::disk('public')->exists($global->favicon)) {
-                    Storage::disk('public')->delete($global->favicon);
+                if ($global->favicon && file_exists(public_path('storage/' . $global->favicon))) {
+                    unlink(public_path('storage/' . $global->favicon));
                 }
                 
                 $file = $request->file('favicon');
                 $filename = time() . "_favicon." . $file->getClientOriginalExtension();
-                $path = $file->storeAs('global/favicons', $filename, 'public');
-                $data['favicon'] = $path;
+                
+                // Crear directorio si no existe
+                $destinationPath = public_path('storage/global/favicons');
+                if (!file_exists($destinationPath)) {
+                    mkdir($destinationPath, 0755, true);
+                }
+                
+                // Mover archivo directamente a public/storage/
+                $file->move($destinationPath, $filename);
+                $data['favicon'] = 'global/favicons/' . $filename;
+                
+                \Log::info('Favicon guardado en: ' . $destinationPath . '/' . $filename);
             }
 
             // Debug: Ver qué datos se van a guardar
